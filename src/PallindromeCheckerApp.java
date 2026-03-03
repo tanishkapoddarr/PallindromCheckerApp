@@ -9,7 +9,7 @@ public class PallindromeCheckerApp{
         return false;
     }
     public static void main(String[] args){
-        String str="ma";
+        String str="madam";
         boolean result= isPalindrome(str);
         System.out.println("Input Text:"+str);
         System.out.println("Is it a Palindrome?:"+result);
