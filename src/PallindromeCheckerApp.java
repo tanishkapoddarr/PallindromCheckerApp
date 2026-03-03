@@ -1,18 +1,26 @@
 public class PallindromeCheckerApp {
-    public static boolean isPalindrome(String text){
-        String normalized = text.replaceAll("\\s+", "").toLowerCase();
-        int length = normalized.length();
-        for (int i = 0; i < length/2; i++){
-            if(normalized.charAt(i) != normalized.charAt(length-1-i)){
+    public static void main(String[] args){
+        String str = "racecar";
+        PalindromeService service = new PalindromeService();
+        boolean result = service.checkPalindrome(str);
+
+        System.out.println("Input : " + str);
+        System.out.println("Is Palindrome? : " + result);
+    }
+}
+class PalindromeService{
+    public boolean checkPalindrome(String str) {
+
+        int start = 0;
+        int end = str.length() - 1;
+
+        while (start < end) {
+            if (str.charAt(start) != str.charAt(end)) {
                 return false;
             }
+            start++;
+            end--;
         }
         return true;
-    }
-    public static void main(String[] args){
-        String text= "A man a plan a canal Panama";
-        boolean result = isPalindrome(text);
-        System.out.println("Input: " +text);
-        System.out.println("Is Palindrome?: " +result);
     }
 }
