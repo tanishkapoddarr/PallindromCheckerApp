@@ -16,7 +16,7 @@ public class PallindromeCheckerApp {
         }
         return true;
     }
-    public static void main(String[] args){git status
+    public static void main(String[] args){
         String str = "refer";
         boolean result = isPalindrome(str);
         System.out.println("Input: " +str);
