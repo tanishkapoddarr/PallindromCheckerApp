@@ -1,18 +1,21 @@
-public class PallindromeCheckerApp{
-    public static boolean isPalindrome(String str){
-        int length =str.length();
-        String reversed= "";
-        for(int i=length-1;i>=0;i--){
-            reversed+=str;
-            return true;
+import java.util.Stack;
+public class PallindromeCheckerApp {
+    public static boolean isPalindrome(String str) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
+            stack.push(c);
         }
-        return false;
+        for( char c : str.toCharArray()){
+            if(stack.pop()!=c){
+                return false;
+            }
+        }
+        return true;
     }
     public static void main(String[] args){
-        String str="madam";
-        boolean result= isPalindrome(str);
-        System.out.println("Input Text:"+str);
-        System.out.println("Is it a Palindrome?:"+result);
-
+        String str = "noon";
+        boolean result = isPalindrome(str);
+        System.out.println("Input: " +str);
+        System.out.println("Is Palindrome?: " +result);
     }
 }
